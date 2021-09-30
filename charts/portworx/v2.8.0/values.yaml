@@ -33,7 +33,8 @@ lighthouseStorkConnectorVersion: 2.0.7
 
 deployOnMaster: false                 # For POC only
 csi: false                            # Enable CSI
-
+openshiftInstall: false
+AKSorEKSInstall: false
 serviceAccount:
   hook:
     create: true
