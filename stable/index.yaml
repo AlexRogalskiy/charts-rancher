@@ -3,9 +3,9 @@ entries:
   portworx:
   - apiVersion: v1
     appVersion: "2.8"
-    created: "2021-09-30T17:12:49.121196519-06:00"
+    created: "2021-09-30T17:15:16.2979282-06:00"
     description: A Helm chart for installing Portworx on Kubernetes.
-    digest: b359d7b42202c74f1c9cb09a23da094af879a7bdcd50dfc8c3c7209552da42db
+    digest: 52893f4c73d18f50a612c92b8ea7ee32136d96f230f8328e468bd57e5a3b6623
     home: https://portworx.com/
     icon: https://raw.githubusercontent.com/portworx/helm/master/doc/media/k8s-porx.png
     keywords:
@@ -25,11 +25,11 @@ entries:
     - email: tasharma@purestorage.com
       name: sharma-tapas
     - email: dahuang@purestorage.com
-      name: Daniel Huang
+      name: dahuang-purestorage
     name: portworx
     sources:
     - https://github.com/portworx/helm
     urls:
     - https://raw.githubusercontent.com/portworx/charts-rancher/master/stable/portworx-2.8.0.tgz
     version: 2.8.0
-generated: "2021-09-30T17:12:49.117049602-06:00"
+generated: "2021-09-30T17:15:16.293627106-06:00"

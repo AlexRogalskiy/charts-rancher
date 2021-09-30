@@ -20,7 +20,7 @@ maintainers:
     email: onaumov@purestorage.com
   - name: sharma-tapas
     email: tasharma@purestorage.com
-  - name: Daniel Huang
+  - name: dahuang-purestorage
     email: dahuang@purestorage.com
 sources:
   - https://github.com/portworx/helm
