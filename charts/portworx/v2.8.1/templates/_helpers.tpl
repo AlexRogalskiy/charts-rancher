@@ -95,18 +95,6 @@ release: {{ .Release.Name | quote }}
 {{- end -}}
 {{- end -}}
 
-{{- define "px.getLighthouseImages" -}}
-{{- if (.Values.customRegistryURL) -}}
-    {{- if (eq "/" (.Values.customRegistryURL | regexFind "/")) -}}
-        {{ trim .Values.customRegistryURL }}
-    {{- else -}}
-        {{cat (trim .Values.customRegistryURL) "/portworx/" | replace " " ""}}
-    {{- end -}}
-{{- else -}}
-        {{ "portworx" }}
-{{- end -}}
-{{- end -}}
-
 {{- define "px.getPauseImage" -}}
 {{- if (.Values.customRegistryURL) -}}
     {{- if (eq "/" (.Values.customRegistryURL | regexFind "/")) -}}
