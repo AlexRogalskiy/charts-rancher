@@ -209,6 +209,10 @@ spec:
             - mountPath: /etc/pwx/etcdcerts
               name: etcdcerts
           {{- end }}
+          {{- if not (.Capabilities.KubeVersion.GitVersion | toString | regexFind "(k3s|rke2)" | empty) }}
+            - name: containerd-k3s
+              mountPath: /run/containerd/containerd.sock
+          {{- end }}
             - name: dockersock
               mountPath: /var/run/docker.sock
             - name: containerdsock
@@ -301,6 +305,11 @@ spec:
            {{- end }}
 
       restartPolicy: Always
+      {{- if not (.Capabilities.KubeVersion.GitVersion | toString | regexFind "(k3s|rke2)" | empty) }}
+      tolerations:
+        - key: node-role.kubernetes.io/master
+          effect: NoSchedule
+      {{- end }}
       serviceAccountName: px-account
       volumes:
         {{- if ne $etcdCertPath "none" }}
@@ -315,6 +324,11 @@ spec:
             - key: "{{ $etcdKey }}"
               path: "{{ $etcdKey }}"
         {{- end}}
+        {{- if not (.Capabilities.KubeVersion.GitVersion | toString | regexFind "(k3s|rke2)" | empty) }}
+        - name: containerd-k3s
+          hostPath:
+            path: /run/k3s/containerd/containerd.sock
+        {{- end }}
         - name: dockersock
           hostPath:
             path: {{if eq $pksInstall true}}/var/vcap/sys/run/docker/docker.sock{{else}}/var/run/docker.sock{{end}}
@@ -418,8 +432,10 @@ spec:
                     operator: NotIn
                     values:
                       - "false"
+                  {{- if not (.Capabilities.KubeVersion.GitVersion | toString | regexFind "(k3s|rke2)" | empty) }}
                   - key: node-role.kubernetes.io/master
                     operator: DoesNotExist
+                  {{- end }}
       hostNetwork: true
       hostPID: false
       containers:
