@@ -1,12 +1,11 @@
-
 apiVersion: v1
 entries:
   portworx:
   - apiVersion: v1
     appVersion: "2.8"
-    created: "2021-12-03T16:06:47.719171877-07:00"
+    created: "2021-12-15T19:43:03.526309119-07:00"
     description: A Helm chart for installing Portworx on Kubernetes.
-    digest: 8fb5b544ff87c88c6031bc05c55eac4d559922d4be09c2c92fa20925b4c8920c
+    digest: c9e42fafad08ce7a3a8925383a43e1d6659282d5cc7b8552ebd201777c713375
     home: https://portworx.com/
     icon: https://raw.githubusercontent.com/portworx/helm/master/doc/media/k8s-porx.png
     keywords:
@@ -35,7 +34,7 @@ entries:
     version: 2.8.1
   - apiVersion: v1
     appVersion: "2.8"
-    created: "2021-12-03T16:06:47.717681123-07:00"
+    created: "2021-12-15T19:43:03.524522531-07:00"
     description: A Helm chart for installing Portworx on Kubernetes.
     digest: 9dc470ef1ffeec6789d6a9bf5bb03147252b563a32f40926be28ddfb73fd7690
     home: https://portworx.com/
@@ -64,4 +63,4 @@ entries:
     urls:
     - - https://raw.githubusercontent.com/portworx/charts-rancher/master/stable/portworx-2.8.0.tgz
     version: 2.8.0
-generated: "2021-12-03T16:06:47.716133889-07:00"
+generated: "2021-12-15T19:43:03.522112295-07:00"
